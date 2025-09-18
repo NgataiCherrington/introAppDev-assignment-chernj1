@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-    
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "env:copy": "cp .env.example env || copy .env.example .env",
+    "docker:run:dev": " docker run --name chernj1-assignment-api -e POSTGRES_PASSWORD=HelloWorld123 -p 5432:5432 -d postgres",
+    "prisma:migrate": "npx prisma migrate dev",
+    "prisma:rest": "npx prisma migrate reset --force"
   },
   "keywords": [],
   "author": "",
